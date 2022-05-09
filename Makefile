@@ -1,16 +1,19 @@
 CXX=g++
 RM=rm -rf
 
+#CUDA Path
+CUDA_PATH?=/usr/local/cuda
+
 #include directories seperated by a space
 INC=./utils/include/
 INC_PARAMS=$(foreach d, $(INC), -I$d)
-CUDAINC=/usr/local/cuda/include/ /usr/local/cuda/samples/common/inc/
+CUDAINC=$(CUDA_PATH)/include/ $(CUDA_PATH)/samples/common/inc/
 CUDAINC_PARAMS=$(foreach d, $(CUDAINC), -I$d)
 
 #lib directories seperated by a space
 LIB=./utils/lib/
 LIB_PARAMS=$(foreach d, $(LIB), -L$d)
-CUDALIB=/usr/local/cuda/lib64/ /usr/local/cuda/samples/common/lib/
+CUDALIB=$(CUDA_PATH)/lib64/ $(CUDA_PATH)/samples/common/lib/
 CUDALIB_PARAMS=$(foreach d, $(CUDALIB), -L$d)
 
 #paramaters as suggested by seqan
