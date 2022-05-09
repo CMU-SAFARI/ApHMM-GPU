@@ -30,6 +30,25 @@ BibTeX entry for citation:
 }
 ```
 
+The link to the Apollo paper can be found at [this link](https://academic.oup.com/bioinformatics/article/36/12/3669/5804978?login=true). BibTeX entry for Apollo:
+
+```
+@article{firtina_apollo_2020,
+  title = {Apollo: a sequencing-technology-independent, scalable and accurate assembly polishing algorithm},
+  volume = {36},
+  issn = {1367-4803},
+  url = {https://doi.org/10.1093/bioinformatics/btaa179},
+  doi = {10.1093/bioinformatics/btaa179},
+  number = {12},
+  urldate = {2022-04-13},
+  journal = {Bioinformatics},
+  author = {Firtina, Can and Kim, Jeremie S. and Alser, Mohammed and Senol Cali, Damla and Cicek, A Ercument and Alkan, Can and Mutlu, Onur},
+  month = {June},
+  year = {2020},
+  pages = {3669--3679},
+}
+```
+
 ## Installing ApHMM-GPU
 ### Repository Structure
 
@@ -156,10 +175,15 @@ The restriction on the number of characters per line is required as Apollo const
 ./aphmm-gpu -a assembly.fasta -r reads1.fasta -r reads2.fasta -m alignment1.bam -m alignment2.bam -t 30 -g 256 -o polished.fasta -c 650
 ```
 
+
 ## Example run
 
-We provide the input files in the `test/` directory and command we use to evaluate the GPU runtime. To test ApHMM-GPU using your GPUs, you may use the following test run. As ApHMM-GPU is implemented in Apollo, ApHMM-GPU provides the output related to both Apollo and execution time of the steps that ApHMM-GPU executes in a GPU. We use these exeuction times in the ApHMM paper.
+We provide the input files in the `test/` directory and command we use to evaluate the GPU runtime. To test ApHMM-GPU using your GPUs, you may use the following test run. As ApHMM-GPU is implemented in Apollo, ApHMM-GPU provides the output related to both Apollo and execution time of the steps that ApHMM-GPU executes in a GPU. We use these execution times in the ApHMM paper.
 
+We evaluate ApHMM-GPU using NVIDIA Titan V and NVIDIA A100 GPUs. Our GPU machines include the Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz processors, which is used to execute the CPU parts of the ApHMM-GPU implementation. Our GPU machine has 192GB of main memory.
+
+
+To execute ApHMM-GPU using the test dataset we provide, change to the `test/` directory and execute the `aphmm-gpu` as follows:
 ```bash
 cd test
 aphmm-gpu -a Ecoli.O157_assembly.contigs.fasta -r SRR5413248_subreads_1k.fasta -m Ecoli.O157_assembly.contigs_tig00000864_1k.bam -o polished.fasta -c 650 -g 256
@@ -170,6 +194,8 @@ An example output is as follows:
 ```bash
 ...
 Number of observations processed in parallel: 256
+Overall GPU threads to execute at each Forward kernel: 307200
+Overall GPU threads to execute at each Backward kernel: 1126400
 forward: Number of forward calculations in parallel:256 	Total time (everything)=48s, 	Data Preparation=1s, 	CPU+GPU calculation=46s, 	GPU Calculation (all forwards)=0.020122s, 	GPU Calculation (single forward)=0.000079s, 	Avg. Kernel Time (single timestamp)=0.000031s, 	NumOf Kernel Calls=649
 backward: Number of backward calculations in parallel:256 	Total time (everything)=44s, 	Data Preparation=0s, 	CPU+GPU calculation=44s, 	GPU Calculation (all backwards)=0.017541s, 	GPU Calculation (single backward)=0.000069s, 	Avg. Kernel Time (single timestamp)=0.000027s, 	NumOf Kernel Calls=649
 forward: Number of forward calculations in parallel:256 	Total time (everything)=46s, 	Data Preparation=0s, 	CPU+GPU calculation=46s, 	GPU Calculation (all forwards)=0.020625s, 	GPU Calculation (single forward)=0.000081s, 	Avg. Kernel Time (single timestamp)=0.000032s, 	NumOf Kernel Calls=649
@@ -192,3 +218,8 @@ Overall polishing time: 2760473.803000 ms (cpu time) 2759294.783717 ms (real tim
 ```
 
 From the above example output, we are mainly interested in the following four values: `GPU Calculation (single forward)`, `GPU Calculation (single backward)`, `avgOverallPosteriorCalc`, and `avgmaximizeEMTime time (avg of all contigs)`. Apart from `avgOverallPosteriorCalc`, all of the values show the time it took for GPU to calculate the relevant parts: forward calculation for a single observation, backward calculation for a single observation, and the expectation-maximization (EM) step. The value for `avgOverallPosteriorCalc` shows time for accumulating values of the previously calculated Forward/Backward values that are used in the EM step.
+
+Further, the above example output also shows the number of CUDA cores requested for each kernel execution during Forward and Backward calculations. For the above example, the Forward and Backward calculations request 307,200 and 1,126,400 CUDA cores for each kernel execution, respectively.
+
+## Acknowledgments
+We acknowledge support from the SAFARI Research Group’s industrial partners, especially Intel, Google, Huawei, Microsoft, VMware, and the Semiconductor Research Corporation.
