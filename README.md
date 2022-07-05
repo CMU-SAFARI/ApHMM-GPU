@@ -15,14 +15,14 @@ Please cite the following preliminary version of our paper if you find this repo
 > Can Firtina, Kamlesh Pillai, Gurpreet S. Kalsi, Bharathwaj Suresh, Damla Senol Cali, 
 > Jeremie S. Kim, Taha Shahroodi, Meryem Banu Cavlak, Joel Lindegger, Mohammed Alser, 
 > Juan Gómez-Luna, Sreenivas Subramoney, and Onur Mutlu,
-> "ApHMM: A Profile Hidden Markov Model Acceleration Framework for Genome Analysis",
+> "ApHMM: Accelerating Profile Hidden Markov Models for Fast and Energy-Efficient Genome Analysis",
 > *arXiv*, July 2022.
 
 BibTeX entry for citation:
 
 ```
 @article{firtina_aphmm_2022,
-  title = {{ApHMM}: {A} {Profile} {Hidden} {Markov} {Model} {Acceleration} {Framework} for {Genome} {Analysis}},
+  title = {{ApHMM}: {Accelerating} {Profile} {Hidden} {Markov} {Models} for {Fast} and {Energy-Efficient} {Genome} {Analysis}},
   journal = {arXiv},
   author = {Firtina, Can and Pillai, Kamlesh and Kalsi, Gurpreet S. and Suresh, Bharathwaj and Senol Cali, Damla and Kim, Jeremie S. and Shahroodi, Taha and Cavlak, Meryem Banu and Lindegger, Joel and Alser, Mohammed and G{\'o}mez-Luna, Juan and Subramoney, Sreenivas and Mutlu, Onur},
   year = {2022},
