@@ -13,10 +13,10 @@ We integrate the ApHMM-GPU implementation in Apollo, an assembly polishing tool 
 Please cite the following preliminary version of our paper if you find this repository useful:
 
 > Can Firtina, Kamlesh Pillai, Gurpreet S. Kalsi, Bharathwaj Suresh, Damla Senol Cali, 
-> Jeremie S. Kim,Taha Shahroodi, Meryem Banu Cavlak, Joel Lindegger, Mohammed Alser, 
+> Jeremie S. Kim, Taha Shahroodi, Meryem Banu Cavlak, Joel Lindegger, Mohammed Alser, 
 > Juan Gómez-Luna, Sreenivas Subramoney, and Onur Mutlu,
 > "ApHMM: A Profile Hidden Markov Model Acceleration Framework for Genome Analysis",
-> *arXiv*, May 2022.
+> *arXiv*, July 2022.
 
 BibTeX entry for citation:
 
@@ -26,7 +26,7 @@ BibTeX entry for citation:
   journal = {arXiv},
   author = {Firtina, Can and Pillai, Kamlesh and Kalsi, Gurpreet S. and Suresh, Bharathwaj and Senol Cali, Damla and Kim, Jeremie S. and Shahroodi, Taha and Cavlak, Meryem Banu and Lindegger, Joel and Alser, Mohammed and G{\'o}mez-Luna, Juan and Subramoney, Sreenivas and Mutlu, Onur},
   year = {2022},
-  month = {May},
+  month = {July},
 }
 ```
 
