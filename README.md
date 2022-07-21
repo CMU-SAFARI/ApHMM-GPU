@@ -20,11 +20,12 @@ BibTeX entry for citation:
 
 ```
 @article{firtina_aphmm_2022,
-  title = {{ApHMM}: {Accelerating} {Profile} {Hidden} {Markov} {Models} for {Fast} and {Energy-Efficient} {Genome} {Analysis}},
+  title = {ApHMM: Accelerating Profile Hidden Markov Models for Fast and Energy-Efficient Genome Analysis},
   journal = {arXiv},
-  author = {Firtina, Can and Pillai, Kamlesh and Kalsi, Gurpreet S. and Suresh, Bharathwaj and Senol Cali, Damla and Kim, Jeremie S. and Shahroodi, Taha and Cavlak, Meryem Banu and Lindegger, Joel and Alser, Mohammed and G{\'o}mez-Luna, Juan and Subramoney, Sreenivas and Mutlu, Onur},
+  author = {Firtina, Can and Pillai, Kamlesh and Kalsi, Gurpreet S. and Suresh, Bharathwaj and Cali, Damla Senol and Kim, Jeremie and Shahroodi, Taha and Cavlak, Meryem Banu and Lindegger, Joel and Alser, Mohammed and Luna, Juan Gómez and Subramoney, Sreenivas and Mutlu, Onur},
   year = {2022},
   month = {July},
+  doi = {10.48550/ARXIV.2207.09765}
 }
 ```
 
